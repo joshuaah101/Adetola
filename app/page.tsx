@@ -6,25 +6,48 @@ import tola from '/public/img/adetola.png'
 import Navbar from '@/components/nav/Navbar'
 import { inter, montserrat } from "./fonts";
 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
+import Typed from "typed.js";
+
 function Home() {
- 
+  useEffect(() => {
+    AOS.init({
+      // your AOS configuration options
+    });
+  }, []); 
+
+  useEffect(() => {
+    // Create a new instance of Typed
+    const typed = new Typed('#typed-output', {
+      strings: ['Hello, World!', 'I am ADETOLA R, ADENUSI PhD.', 'This is my portfolio page'],
+      typeSpeed: 50,
+      backSpeed: 25,
+      loop: true,
+    });
+
+    // Clean up the Typed instance on component unmount
+    return () => {
+      typed.destroy();
+    };
+  }, []);
   
   return (
       <div className="h-dvh flex flex-col">
         <Navbar />
-
-        <div className="flex flex-col md:flex-row gap-10 mt-5 px-8 md:px-24 md:items-center">
+        
+        <div className="flex flex-col md:flex-row gap-10 justify-between mt-5 px-8 md:px-24 md:items-center">
           <div className="flex flex-col space-y-8">
-            <header className={`${inter.className} text-4xl md:text-5xl font-bold text-purple-600`}>
-              ADETOLA R, ADENUSI PhD.
+            <header id="typed-output" className={`${inter.className} text-4xl md:text-5xl font-bold text-purple-700`}>
             </header>
 
-            <p className={`${montserrat.className} `}>
+            <p className={`${montserrat.className} leading-normal text-xl`}>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores provident nostrum sequi voluptatibus maiores libero facere explicabo perspiciatis nisi, tenetur dignissimos, nesciunt et velit eos consequuntur suscipit iure accusantium quia?
             </p>
           </div>
 
-          <div className="w-full">
+          <div className="w-full" data-aos="flip-down" data-aos-duration="2000" data-aos-easing="ease-in-out">
             <Image
               src={tola}
               className=""

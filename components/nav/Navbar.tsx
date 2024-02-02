@@ -12,14 +12,14 @@ const Navbar = () => {
         setToggleMenu(!toggleMenu)
     }
   return (
-    <div className='px-2 sm:px-0 py-2 sm:py-0 sticky top-0 z-20'>
+    <div className='px-2 sm:px-0 py-2 sm:py-0 sticky top-0 z-20 bg-white dark:bg-black'>
         <nav className={`${montserrat.className} flex justify-between items-center px-8 md:px-24 py-5`}>
             <div className="flex flex-col space-y-2">
-                <span className="h-1 w-12 bg-purple-600"></span>
+                <span className="h-1 w-7 bg-purple-600"></span>
                 <a href="/" className="text-2xl md:text-4xl font-medium">
                     Adetola
                 </a>
-                <span className="h-1 w-12 bg-purple-600"></span>
+                <span className="h-1 w-20 bg-purple-600"></span>
             </div>
 
 
