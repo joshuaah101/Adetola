@@ -39,7 +39,7 @@ function Home() {
         
         <div className="flex flex-col md:flex-row gap-10 justify-between mt-5 px-8 md:px-24 md:items-center">
           <div className="flex flex-col space-y-8">
-            <header id="typed-output" className={`${inter.className} text-4xl md:text-5xl font-bold text-purple-700`}>
+            <header id="typed-output" className={`${inter.className} text-4xl md:text-5xl font-bold text-purple-600`}>
             </header>
 
             <p className={`${montserrat.className} leading-normal text-xl`}>
