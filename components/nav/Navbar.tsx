@@ -1,9 +1,12 @@
 'use client'
+
 import { CiMenuFries } from "react-icons/ci"
 import MobileMenu from "./MobileMenu"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { montserrat } from '@/app/fonts'
 import Link from "next/link"
+import { usePathname } from 'next/navigation';
+import NavItem from './NavItem'
 
 const Navbar = () => {
     const [ toggleMenu, setToggleMenu ] = useState(false)
@@ -11,6 +14,9 @@ const Navbar = () => {
     const handleMenuClick = () => {
         setToggleMenu(!toggleMenu)
     }
+
+    const pathname = usePathname()
+    
   return (
     <div className='sticky top-0 z-20 bg-white dark:bg-black'>
         <nav className={`${montserrat.className} flex justify-between items-center px-8 md:px-24 py-5`}>
@@ -25,27 +31,27 @@ const Navbar = () => {
 
             <ul className="hidden md:flex items-center space-x-5">
                 <li>
-                    <Link href="#" className="text-xl font-medium hover:text-purple-600 transition-all duration-300 ease-in">
+                    <NavItem href={'/'} active={pathname === '/'}>
                         Home
-                    </Link>
+                    </NavItem>
                 </li>
 
                 <li>
-                    <Link href="#" className="text-xl font-medium hover:text-purple-600 transition-all duration-300 ease-in">
-                        Resume
-                    </Link>
-                </li>
-
-                <li>
-                    <Link href="#" className="text-xl font-medium hover:text-purple-600 transition-all duration-300 ease-in">
+                    <NavItem href={'/about'} active={pathname === '/about'}>
                         About
-                    </Link>
+                    </NavItem>
                 </li>
 
                 <li>
-                    <Link href="#" className="text-xl font-medium hover:text-purple-600 transition-all duration-300 ease-in">
-                        Contact
-                    </Link>
+                    <NavItem href={'/services'} active={pathname === '/services'}>
+                        Services
+                    </NavItem>
+                </li>
+
+                <li>
+                    <NavItem href={'/resume'} active={pathname === '/resume'}>
+                        Resume
+                    </NavItem>
                 </li>
             </ul>
 
