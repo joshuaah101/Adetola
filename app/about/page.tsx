@@ -1,7 +1,8 @@
 'use client'
 
+
 import Image from "next/image";
-import tola from '/public/img/adetola.png'
+import frame1 from '/public/img/ARA-9.jpg'
 import Navbar from "@/components/nav/Navbar"
 import { useEffect } from "react";
 import Typed from "typed.js";
@@ -9,6 +10,8 @@ import { inter, montserrat } from "../fonts";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { useRouter } from "next/router";
+import TiltCard from '@/components/tilt'
+import Footer from '@/components/footer/footer'
 
 const About = () => {
     useEffect(() => {
@@ -41,19 +44,25 @@ const About = () => {
                 <header id="typed-about" className={`${montserrat.className} text-4xl md:text-6xl font-bold text-purple-600`}></header>
 
             
-                <p className={`${montserrat.className} leading-normal text-2xl dark:text-gray-400`}>
-                    Over the years, I have garnered experiences that have propelled me into broadcasting, copywriting and educational services. I have had the opportunity to serve in various capacities such as Head of Communication for Model United Nations Academy as well as research and publications committee. In the course of my growing career, a number of scholarly academic articles are being attributed to my credit.
+                <p className={`${montserrat.className} leading-relaxed text-2xl dark:text-gray-400`}>
+                  Over the years, I have garnered experiences that have propelled me into broadcasting, copywriting and educational services. I have had the opportunity to serve in various capacities such as Head of Communication for Model United Nations Academy as well as research and publications committee. In the course of my growing career, a number of scholarly academic articles are being attributed to my credit.
                 </p>
             </div>
 
-            <div className="w-full mt-5" data-aos="flip-down" data-aos-duration="2000" data-aos-easing="ease-in-out">
-                <Image
-                src={tola}
-                className=""
-                alt="Adetola"
+            <div className="my-10 flex md:max-w-4xl mx-auto">
+              <div className="flex flex-col gap-5">
+                <Image 
+                  src={frame1}
+                  alt=""
+                  className="w-[1000px] h-[500px]"
                 />
-          </div> 
+                <p className="text-xl dark:text-gray-400">
+                  Welcome to my world
+                </p>
+              </div>
+            </div>
         </main>
+        <Footer />
     </div>
   )
 }
